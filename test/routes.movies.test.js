@@ -1,30 +1,24 @@
-process.env.NODE_ENV = 'test';
-
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
 import server from '../src/server/index';
 import knex from '../src/server/db/connection';
 
+process.env.NODE_ENV = 'test';
+
 chai.use(chaiHttp);
 
 const should = chai.should();
 
 describe('routes : MOVIES', () => {
-  beforeEach(() => {
-    return knex.migrate
+  beforeEach(() =>
+    knex.migrate
       .rollback()
-      .then(() => {
-        return knex.migrate.latest();
-      })
-      .then(() => {
-        return knex.seed.run();
-      });
-  });
+      .then(() => knex.migrate.latest())
+      .then(() => knex.seed.run())
+  );
 
-  afterEach(() => {
-    return knex.migrate.rollback();
-  });
+  afterEach(() => knex.migrate.rollback());
 
   describe('GET /api/v1/movies', () => {
     it('should return all movies', done => {

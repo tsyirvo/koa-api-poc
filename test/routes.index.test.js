@@ -1,9 +1,9 @@
-process.env.NODE_ENV = 'test';
-
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
 import server from '../src/server/index';
+
+process.env.NODE_ENV = 'test';
 
 chai.use(chaiHttp);
 

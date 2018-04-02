@@ -5,6 +5,8 @@
   "scripts": {
     "start":
       "nodemon ./node_modules/.bin/babel-node ./src/server/index.js  -d dist",
+    "lint": "eslint src --cache --ignore-path .gitignore",
+    "precommit": "./pre-commit.sh",
     "test":
       "./node_modules/mocha/bin/_mocha --compilers js:babel-core/register ./test/**/*.test.js"
   },
@@ -21,17 +23,26 @@
     "koa-redis": "^3.1.2",
     "koa-router": "^7.4.0",
     "koa-session": "^5.8.1",
-    "nodemon": "^1.17.2",
     "passport-local": "^1.0.0",
     "pg": "^7.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "mocha": "^5.0.5",
+    "nodemon": "^1.17.3",
+    "prettier": "^1.11.1",
+    "prettier-eslint": "^8.8.1",
     "sinon": "^4.4.8"
   }
 }

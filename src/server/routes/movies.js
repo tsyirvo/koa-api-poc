@@ -121,4 +121,4 @@ router.del(`${BASE_URL}/:id`, async ctx => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,13 +1,13 @@
 const path = require('path');
 
-const { db_name, db_password } = require('./env');
+const { dbName, dbPassword } = require('./env');
 
 const BASE_PATH = path.join(__dirname, 'src', 'server', 'db');
 
 module.exports = {
   test: {
     client: 'pg',
-    connection: `postgres://${db_name}:${db_password}@localhost:5432/koa_api_test`,
+    connection: `postgres://${dbName}:${dbPassword}@localhost:5432/koa_api_test`,
     migrations: {
       directory: path.join(BASE_PATH, 'migrations'),
     },
@@ -17,7 +17,7 @@ module.exports = {
   },
   development: {
     client: 'pg',
-    connection: `postgres://${db_name}:${db_password}@localhost:5432/koa_api`,
+    connection: `postgres://${dbName}:${dbPassword}@localhost:5432/koa_api`,
     migrations: {
       directory: path.join(BASE_PATH, 'migrations'),
     },
