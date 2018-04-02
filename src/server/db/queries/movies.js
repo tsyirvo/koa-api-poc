@@ -1,4 +1,4 @@
-const knex = require('../connection');
+import knex from '../connection';
 
 function getAllMovies() {
   return knex('movies').select('*');
@@ -30,10 +30,4 @@ function deleteMovie(id) {
     .returning('*');
 }
 
-module.exports = {
-  getAllMovies,
-  getSingleMovie,
-  addMovie,
-  updateMovie,
-  deleteMovie,
-};
+export { getAllMovies, getSingleMovie, addMovie, updateMovie, deleteMovie };

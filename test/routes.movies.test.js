@@ -1,13 +1,14 @@
 process.env.NODE_ENV = 'test';
 
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+
+import server from '../src/server/index';
+import knex from '../src/server/db/connection';
 
 chai.use(chaiHttp);
 
 const should = chai.should();
-const server = require('../src/server/index');
-const knex = require('../src/server/db/connection');
 
 describe('routes : MOVIES', () => {
   beforeEach(() => {

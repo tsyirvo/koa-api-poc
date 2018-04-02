@@ -1,12 +1,13 @@
 process.env.NODE_ENV = 'test';
 
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+
+import server from '../src/server/index';
 
 chai.use(chaiHttp);
 
 const should = chai.should();
-const server = require('../src/server/index');
 
 describe('routes : index', () => {
   describe('GET /', () => {

@@ -1,9 +1,9 @@
-const Koa = require('koa');
-const logger = require('koa-logger');
-const bodyParser = require('koa-bodyparser');
+import Koa from 'koa';
+import logger from 'koa-logger';
+import bodyParser from 'koa-bodyparser';
 
-const indexRoutes = require('./routes/index');
-const movieRoutes = require('./routes/movies');
+import indexRoutes from './routes/index';
+import movieRoutes from './routes/movies';
 
 const app = new Koa();
 const PORT = process.env.PORT || 5000;

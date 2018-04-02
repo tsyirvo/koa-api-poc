@@ -1,8 +1,8 @@
 const path = require('path');
 
-const BASE_PATH = path.join(__dirname, 'src', 'server', 'db');
-
 const { db_name, db_password } = require('./env');
+
+const BASE_PATH = path.join(__dirname, 'src', 'server', 'db');
 
 module.exports = {
   test: {
