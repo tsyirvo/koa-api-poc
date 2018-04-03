@@ -3,16 +3,14 @@
   "version": "0.1.0",
   "description": "Koa web API",
   "scripts": {
-    "start": "nodemon ./node_modules/.bin/babel-node ./src/server/index.js  -d dist",
+    "start":
+      "nodemon ./node_modules/.bin/babel-node ./src/server/index.js  -d dist",
     "lint": "eslint src --cache --ignore-path .gitignore",
     "precommit": "./pre-commit.sh",
-    "test": "./node_modules/mocha/bin/_mocha --compilers js:babel-core/register ./test/**/*.test.js"
+    "test":
+      "./node_modules/mocha/bin/_mocha --require babel-core/register ./test/**/*.test.js"
   },
-  "keywords": [
-    "koa",
-    "node",
-    "poc"
-  ],
+  "keywords": ["koa", "node", "poc"],
   "author": "Gabriel Hofman",
   "license": "MIT",
   "dependencies": {
